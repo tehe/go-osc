@@ -212,6 +212,7 @@ func (msg *Message) ClearData() {
 // address. The match is case sensitive!
 func (msg *Message) Match(addr string) bool {
 	exp := getRegEx(msg.Address)
+	fmt.Println(msg.Address, exp)
 	if exp.MatchString(addr) {
 		return true
 	}
