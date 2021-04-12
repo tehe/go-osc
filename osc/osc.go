@@ -122,11 +122,11 @@ func (s *StandardDispatcher) AddMsgHandler(addr string, handler HandlerFunc) err
 		s.defaultHandler = handler
 		return nil
 	}
-	for _, chr := range "*?,[]{}# " {
-		if strings.Contains(addr, fmt.Sprintf("%c", chr)) {
-			return errors.New("OSC Address string may not contain any characters in \"*?,[]{}#")
-		}
-	}
+	//for _, chr := range "*?,[]{}# " {
+	//	if strings.Contains(addr, fmt.Sprintf("%c", chr)) {
+	//		return errors.New("OSC Address string may not contain any characters in \"*?,[]{}#")
+	//	}
+	//}
 
 	if addressExists(addr, s.handlers) {
 		return errors.New("OSC address exists already")
